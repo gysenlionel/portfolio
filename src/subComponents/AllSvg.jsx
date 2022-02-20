@@ -504,7 +504,7 @@ export const Earth = (props) => (
 
 export const Earth2 = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" {...props}>
-    <title>{'Hearth'}</title>
+    <title>{'Earth'}</title>
     <defs>
       <linearGradient
         id="ccc"
@@ -2036,6 +2036,411 @@ export const RedPlanet = (props) => (
           }}
         />
       </g>
+    </g>
+  </svg>
+)
+
+export const Flame = (props) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136.78 180.9" {...props}>
+    <defs>
+      <filter id="ddddddd" height={1.075} width={1.591} y={-0.037} x={-0.296}>
+        <feGaussianBlur stdDeviation={2.235} />
+      </filter>
+      <filter id="ccccccc" height={1.05} width={1.271} y={-0.025} x={-0.135}>
+        <feGaussianBlur stdDeviation={2.235} />
+      </filter>
+      <filter id="bbbbbbb">
+        <feGaussianBlur stdDeviation={2.235} />
+      </filter>
+      <filter id="aaaaaaa">
+        <feGaussianBlur stdDeviation={2.235} />
+      </filter>
+    </defs>
+    <g transform="translate(-201.97 -530.82)">
+      <path
+        style={{
+          fillRule: 'evenodd',
+          filter: 'url(#aaaaaaa)',
+          stroke: '#de5b00',
+          strokeWidth: 1,
+          fill: '#f90000',
+        }}
+        d="M248.57 524.51s-19.28 72.85-20 96.42c-.71 23.58 37.14 259.29 37.14 259.29s44.29-239.29 45-262.14c.72-22.86-22.85-93.57-22.85-93.57"
+      />
+      <path
+        style={{
+          fillRule: 'evenodd',
+          filter: 'url(#bbbbbbb)',
+          stroke: '#de5b00',
+          strokeWidth: 1,
+          fill: '#f96d00',
+        }}
+        d="M255 525.93s-12.86 77.15-13.57 87.15c-.72 10 23.57 198.57 23.57 198.57s35.71-192.86 35.71-197.14c0-4.29-18.57-89.29-18.57-89.29"
+      />
+      <path
+        style={{
+          fillRule: 'evenodd',
+          filter: 'url(#ccccccc)',
+          stroke: '#de5b00',
+          strokeWidth: 1,
+          fill: '#f9be00',
+        }}
+        d="M262.86 526.65s-10 80-10.72 83.57c-.71 3.57 13.57 127.14 13.57 127.14s25-120 25-125-12.85-86.43-12.85-86.43"
+      />
+      <path
+        style={{
+          fillRule: 'evenodd',
+          filter: 'url(#ddddddd)',
+          stroke: '#de5b00',
+          strokeWidth: 1,
+          fill: '#f9f800',
+        }}
+        d="m271.43 525.93-10 82.86 7.14 59.29 10-60-7.14-82.15z"
+      />
+    </g>
+  </svg>
+)
+
+export const Satellite = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    style={{
+      fillRule: 'evenodd',
+    }}
+    xmlSpace="preserve"
+    viewBox="0 0 14662.565 10697.632"
+    {...props}
+  >
+    <defs>
+      <linearGradient
+        id="b"
+        y2={2395.6}
+        gradientUnits="userSpaceOnUse"
+        y1={2161.2}
+        x2={4371.9}
+        x1={4661}
+      >
+        <stop stopColor="#454585" offset={0} />
+        <stop stopColor="#babafd" offset={1} />
+      </linearGradient>
+      <linearGradient
+        id="cccccccc"
+        y2={2556.1}
+        gradientUnits="userSpaceOnUse"
+        y1={2297.1}
+        x2={4543.6}
+        x1={4669.9}
+      >
+        <stop stopColor="#3a3a63" offset={0} />
+        <stop stopColor="#babafd" offset={1} />
+      </linearGradient>
+      <linearGradient
+        id="mmmmmmmm"
+        y2={3960.5}
+        gradientUnits="userSpaceOnUse"
+        y1={3589.5}
+        gradientTransform="matrix(.0549 .93602 .93691 .07208 177.43 -2719)"
+        x2={5482.6}
+        x1={5408.2}
+      >
+        <stop stopColor="#d9d9d9" stopOpacity={0} offset={0} />
+        <stop stopColor="#fff" offset={0.63} />
+        <stop stopColor="#e9e9e9" stopOpacity={0} offset={1} />
+      </linearGradient>
+      <linearGradient
+        id="nnnnnnnn"
+        y2={3569.8}
+        gradientUnits="userSpaceOnUse"
+        y1={3508.1}
+        gradientTransform="matrix(.15386 .94918 1.0243 .27253 -672.37 -3525.1)"
+        x2={5371.2}
+        x1={5319.3}
+      >
+        <stop offset={0} />
+        <stop stopColor="#fff" offset={0.5} />
+        <stop stopColor="#0d0000" offset={1} />
+      </linearGradient>
+      <linearGradient
+        id="pppppppp"
+        y2={4560.9}
+        gradientUnits="userSpaceOnUse"
+        y1={5251.7}
+        gradientTransform="scale(1 -1) rotate(-45.064 -4963.143 1433.745)"
+        x2={4002.9}
+        x1={4002.9}
+      >
+        <stop offset={0} />
+        <stop stopOpacity={0} offset={1} />
+      </linearGradient>
+      <linearGradient id="aaaaaaaa">
+        <stop offset={0} />
+        <stop stopColor="#a1a1a1" offset={0.5} />
+        <stop offset={1} />
+      </linearGradient>
+      <linearGradient
+        id="iiiiiiii"
+        y2={2633.7}
+        gradientUnits="userSpaceOnUse"
+        y1={2288.5}
+        x2={4497.8}
+        x1={4658.9}
+      >
+        <stop stopColor="#454585" offset={0} />
+        <stop stopColor="#fff" offset={1} />
+      </linearGradient>
+      <linearGradient
+        id="jjjjjjjj"
+        y2={2605.9}
+        gradientUnits="userSpaceOnUse"
+        y1={2318.9}
+        x2={4759.6}
+        x1={5064.1}
+      >
+        <stop stopColor="#51519c" offset={0} />
+        <stop stopColor="#f3f3f9" offset={1} />
+      </linearGradient>
+      <linearGradient
+        id="eeeeeeee"
+        y2={1865.6}
+        gradientUnits="userSpaceOnUse"
+        y1={1627.1}
+        x2={4786.4}
+        x1={4673.2}
+      >
+        <stop offset={0} />
+        <stop stopColor="#fffbfb" offset={0.241} />
+        <stop offset={1} />
+      </linearGradient>
+      <linearGradient
+        id="gggggggg"
+        y2={2144.4}
+        gradientUnits="userSpaceOnUse"
+        y1={1786.8}
+        gradientTransform="rotate(35.852 5740.921 2043.721) scale(1.15926)"
+        x2={4079.6}
+        x1={4157.5}
+      >
+        <stop offset={0} />
+        <stop stopOpacity={0} offset={1} />
+      </linearGradient>
+      <linearGradient
+        id="hhhhhhhh"
+        y2={1800.8}
+        xlinkHref="#a"
+        gradientUnits="userSpaceOnUse"
+        y1={1831.3}
+        gradientTransform="matrix(.07747 1.1506 -1.1661 -.27058 6242.2 -3232.4)"
+        x2={4886.2}
+        x1={4851.7}
+      />
+      <linearGradient
+        id="dddddddd"
+        y2={1800.1}
+        xlinkHref="#a"
+        gradientUnits="userSpaceOnUse"
+        y1={1829.5}
+        gradientTransform="matrix(-.00485 -.61118 -.70244 .00557 5924.5 4619.9)"
+        x2={4875.4}
+        x1={4845.5}
+      />
+      <linearGradient
+        id="kkkkkkkk"
+        y2={1800.1}
+        xlinkHref="#a"
+        gradientUnits="userSpaceOnUse"
+        y1={1829.5}
+        gradientTransform="matrix(.84221 -.0585 .06724 .96797 603.64 369.59)"
+        x2={4875.4}
+        x1={4845.5}
+      />
+      <radialGradient
+        id="llllllll"
+        fx={5068.2}
+        fy={3650.1}
+        gradientUnits="userSpaceOnUse"
+        cy={3720}
+        cx={5101.4}
+        gradientTransform="matrix(.26261 2.114 1.5934 .08085 -3332.5 -8761.5)"
+        r={353.82}
+      >
+        <stop stopColor="#050101" offset={0} />
+        <stop stopColor="#fff" offset={1} />
+      </radialGradient>
+      <radialGradient
+        id="oooooooo"
+        fx={5132.7}
+        fy={3654.9}
+        gradientUnits="userSpaceOnUse"
+        cy={3747.5}
+        cx={5063.1}
+        gradientTransform="matrix(-.0739 -.67365 -.59529 .01185 6512.5 5749.9)"
+        r={329.36}
+      >
+        <stop stopColor="#c6c6c6" offset={0} />
+        <stop stopColor="#1a1a1a" offset={1} />
+      </radialGradient>
+      <radialGradient
+        id="ffffffff"
+        fx={3964.4}
+        fy={2461.7}
+        gradientUnits="userSpaceOnUse"
+        cy={2415.4}
+        cx={3977.6}
+        gradientTransform="matrix(-1.2731 .40587 -.37071 -1.1628 10558 3000.4)"
+        r={119.15}
+      >
+        <stop stopColor="#fff" offset={0} />
+        <stop stopColor="#040000" offset={1} />
+      </radialGradient>
+    </defs>
+    <g
+      style={{
+        fillRule: 'evenodd',
+      }}
+    >
+      <path
+        style={{
+          fill: '#5e889d',
+        }}
+        d="m4611.2 2509.8 276.6-163.3-402.9-220.9-263.1 112 389.4 272.2z"
+        transform="matrix(6.74817 .61529 -1.05552 6.73374 -24247.496 -14769.092)"
+      />
+      <path
+        style={{
+          fillRule: 'nonzero',
+          fill: 'url(#bbbbbbbb)',
+        }}
+        d="m4647.5 2233.9-160.4-89.4-91.4 41.1 155.4 101.4 96.4-53.1zm-381.6 9.1 160.7 112.8 106.5-58.8-157.2-102.7-110 48.7zm284.4 65.1-105.1 59.4 167.1 116.1 110.9-63.3-172.9-112.2zm189.6 101.6 109.5-63.3-184.4-102.8-96.9 53.8 171.8 112.3z"
+        transform="matrix(6.74817 .61529 -1.05552 6.73374 -24247.496 -14769.092)"
+      />
+      <path
+        style={{
+          fill: '#3c687e',
+        }}
+        d="m4611.2 2509.8 276.6-163.3-375.2-219.6c-9.4-4.4-16-5.8-28.9-3.2l-246.4 107.1c-6.3 4.3-6.3 9.7-2.2 16l376.1 263z"
+        transform="matrix(4.45806 1.8337 -4.05196 6.74746 -8537.413 -22551.337)"
+      />
+      <path
+        style={{
+          fillRule: 'nonzero',
+          fill: 'url(#cccccccc)',
+        }}
+        d="m4651.3 2231.8-153.4-92.7-102.2 46.5 155.4 101.4 100.2-55.2zm-385.4 11.2 160.7 112.8 106.5-58.8-157.2-102.7-110 48.7zm284.4 65.1-105.1 59.4 167.1 116.1 110.9-63.3-172.9-112.2zm189.6 101.6 109.5-63.3-180.6-105-100.7 56 171.8 112.3z"
+        transform="matrix(4.45806 1.8337 -4.05196 6.74746 -8537.413 -22551.337)"
+      />
+      <path
+        style={{
+          fillRule: 'nonzero',
+          fill: 'url(#dddddddd)',
+        }}
+        d="M4604.8 1647.8c-16.7-15.7-1.1-28.2 13.8-13.5l28.1 21c18 10.8-5.8 28.8-17.9 23.3l-26.5-29 2.5-1.8z"
+        transform="matrix(7.6074 -.25604 .25604 7.6074 -30280 -6835.8)"
+      />
+      <path
+        style={{
+          fill: 'url(#eeeeeeee)',
+        }}
+        d="M4640.5 1960.5c58.3-34.7 50.5-161-5.8-213.8-44-41.8-102.2-53.4-142.8-30.7l337.2-149.3c44.6-23.6 117.6-31.3 166.8 21.1 32.1 34.2 47.4 126.2-19.6 170.2l-335.8 202.5z"
+        transform="matrix(7.6074 -.25604 .25604 7.6074 -30280 -6835.8)"
+      />
+      <path
+        style={{
+          fill: 'url(#ffffffff)',
+        }}
+        d="M4483.3 1722.8c44.4-34.8 101.7-25.4 150.2 20.7 60.6 58.6 75.2 188.1-6.4 225.1-120.6 54.5-246.7-165.2-143.8-245.8z"
+        transform="matrix(7.6074 -.25604 .25604 7.6074 -30280 -6835.8)"
+      />
+      <path
+        style={{
+          fillRule: 'evenodd',
+          fill: 'url(#gggggggg)',
+        }}
+        d="M4640.5 1960.5c58.3-34.7 50.5-161-5.8-213.8-44-41.8-102.2-53.4-142.8-30.7l337.2-149.3c44.6-23.6 117.6-31.3 166.8 21.1 32.1 34.2 47.4 126.2-19.6 170.2l-335.8 202.5z"
+        transform="matrix(7.6074 -.25604 .25604 7.6074 -30280 -6835.8)"
+      />
+      <path
+        style={{
+          fillRule: 'nonzero',
+          fill: 'url(#hhhhhhhh)',
+        }}
+        d="M4436.3 1884.8c21.1 9.6 25.6 25.4 35.1 52.2l83.8-45.4c25.8-23.6-6-71.1-33.4-63.5l-85.5 56.7z"
+        transform="matrix(7.6074 -.25604 .25604 7.6074 -30280 -6835.8)"
+      />
+      <path
+        style={{
+          fill: '#5e889d',
+        }}
+        d="m4611.2 2509.8 276.6-163.3-402.9-220.9-263.1 112 389.4 272.2z"
+        transform="matrix(7.7452 -.55145 .28226 10.60951 -27427.53 -14627.79)"
+      />
+      <path
+        style={{
+          fillRule: 'nonzero',
+          fill: 'url(#iiiiiiii)',
+        }}
+        d="m4654.3 2238.3-167.2-93.8-91.4 41.1 158.8 103.1 99.8-50.4zm-388.4 4.7 160.7 112.8 108.8-55.4-159.5-106.1-110 48.7zm287.8 66.9-108.5 57.6 167.1 116.1 110.9-63.3-169.5-110.4zm186.2 99.8 109.5-63.3-174.2-97.6-102.5 52.9 167.2 108z"
+        transform="matrix(7.7452 -.55145 .28226 10.60951 -27427.53 -14627.79)"
+      />
+      <path
+        style={{
+          fill: '#6f95a9',
+        }}
+        d="m5022.2 2610.9 261.5-184.4c4.4-6.2-2.3-10.8-9.1-14.2l-379.5-61.9-276.2 164.4 381.4 99.4c8.1 1.3 15.3 0 21.9-3.3z"
+        transform="matrix(8.60075 .02221 1.6174 11.68718 -34712.457 -19971.999)"
+      />
+      <path
+        style={{
+          fillRule: 'nonzero',
+          fill: 'url(#jjjjjjjj)',
+        }}
+        d="m5053.2 2392.4-156.8-27.7-96.1 58.9 154.8 35.1 98.1-66.3zM4664 2506.3l159.6 42.7 112.4-77.2-156.5-35.6-115.5 70.1zm289.1-30.7-111.1 77.3 166 43.3 117.2-81.9-172.1-38.7zm189.8 25.5 108.6-75.6-179.6-29.7-99.9 66.2 170.9 39.1z"
+        transform="matrix(8.60075 .02221 1.6174 11.68718 -34712.457 -19971.999)"
+      />
+      <path
+        style={{
+          fillRule: 'nonzero',
+          fill: 'url(#kkkkkkkk)',
+        }}
+        d="M4835.3 1867.8c23.5 21.2 41.1.7 19.3-18.2l-31.9-36.5c-16.8-23.6-41.3 10.7-32.4 26.8l35.3 26.1 3.9-1.8 5.8 3.6z"
+        transform="matrix(7.6074 -.25604 .25604 7.6074 -30280 -6835.8)"
+      />
+      <path
+        style={{
+          fill: 'url(#llllllll)',
+        }}
+        d="M4151.3 2803.3c94.8-27.3 26-213.7-148.3-403.6-175.2-189.6-397.9-328.1-485.6-285.8-79.6 38.3-25.4 212.3 148.7 402.4 129.8 139.4 360.2 323.1 485.2 287z"
+        transform="rotate(-6.836 -73862.877 233179.5) scale(7.61169)"
+      />
+      <path
+        style={{
+          opacity: 0.5,
+          fill: 'url(#mmmmmmmm)',
+        }}
+        d="M4154.7 2796c94.9-27.4 26.9-182.4-130.8-383.9-175.5-224.2-392.6 94-257 196.9 113.4 85.9 262.9 223 387.8 187z"
+        transform="rotate(-6.836 -73862.877 233179.5) scale(7.61169)"
+      />
+      <path
+        style={{
+          fill: 'url(#nnnnnnnn)',
+        }}
+        d="M3950.6 2371.4c4.4-5.4-26.9-37.7-34.2-32.4l-299.2 321.2c-11.6 13.1.8 24.1 12.5 11.3l320.9-300.1z"
+        transform="rotate(-6.836 -73862.877 233179.5) scale(7.61169)"
+      />
+      <path
+        style={{
+          fill: 'url(#oooooooo)',
+        }}
+        d="M3517.3 2114c124.9-67.3 334.2 4.1 469.4 123.1 140 123.4 249.3 353.3 202.7 529.7 23.1-69.7-48.1-216.4-186.4-367.1-175.2-189.6-396.2-324.5-485.7-285.7z"
+        transform="rotate(-6.836 -73862.877 233179.5) scale(7.61169)"
+      />
+      <path
+        style={{
+          fill: 'url(#pppppppp)',
+        }}
+        d="M3950.6 2371.4c4.4-5.4-26.9-37.7-34.2-32.4l-299.2 321.2c-11.6 13.1.8 24.1 12.5 11.3l320.9-300.1z"
+        transform="rotate(-6.836 -73862.877 233179.5) scale(7.61169)"
+      />
     </g>
   </svg>
 )

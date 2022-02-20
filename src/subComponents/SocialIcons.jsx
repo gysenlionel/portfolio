@@ -1,7 +1,7 @@
 import React from 'react'
-import { NavLink, Link } from 'react-router-dom'
+
 import styled from 'styled-components'
-import { Github, Linkedin, Linkedin2 } from './AllSvg'
+import { Github, Linkedin2 } from './AllSvg'
 import { DarkTheme } from '../components/Theme'
 
 const Icons = styled.div`
@@ -27,6 +27,10 @@ const Line = styled.span`
 `
 
 const Git = styled(Github)`
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   &:hover {
     transform: scale(1.3);
     transition: 0.3s ease-in-out;
@@ -35,6 +39,10 @@ const Git = styled(Github)`
 `
 
 const Linke = styled(Linkedin2)`
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   &:hover {
     transform: scale(1.3);
     transition: 0.3s ease-in-out;
@@ -53,8 +61,8 @@ const SocialIcons = (props) => {
           target="_blank"
         >
           <Git
-            width={25}
-            height={25}
+            width={30}
+            height={30}
             fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body}
           />
         </a>
@@ -67,8 +75,8 @@ const SocialIcons = (props) => {
           target="_blank"
         >
           <Linke
-            width={28}
-            height={28}
+            width={33}
+            height={33}
             fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body}
           />
         </a>

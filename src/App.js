@@ -1,27 +1,34 @@
 import { ThemeProvider } from 'styled-components';
 import { DarkTheme, lightTheme } from './components/Theme';
 import GlobalStyle from './globalStyles';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Main from './components/Main'
 import About from './components/About'
 
 import MySkills from './components/MySkills'
 import Work from './components/Work'
+import { AnimatePresence } from 'framer-motion';
 function App() {
+
+  const location = useLocation()
   return (
     <>
       <GlobalStyle />
 
 
       <ThemeProvider theme={lightTheme}>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/myskills" element={<MySkills />} />
-          <Route path="/work" element={<Work />} />
-          test
-        </Routes>
+
+        <AnimatePresence exitBeforeEnter>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Main />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/myskills" element={<MySkills />} />
+            <Route path="/work" element={<Work />} />
+            test
+          </Routes>
+        </AnimatePresence>
+
       </ThemeProvider>
 
     </>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import img from '../assets/svg/img/moi.png'
+import img from '../assets/img/moi.png'
 import { motion } from 'framer-motion'
 const Box = styled(motion.div)`
   position: absolute;
