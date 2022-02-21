@@ -7,6 +7,8 @@ import { Earth2, Moon, Planet, RedPlanet } from '../subComponents/AllSvg'
 import NameHome from '../subComponents/NameHome'
 import Nav from '../subComponents/Nav'
 import Intro from './Intro'
+import { motion } from 'framer-motion'
+import { device } from '../subComponents/Responsive'
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
@@ -61,6 +63,14 @@ const Center = styled.button`
     display: ${(props) => (props.click ? 'none' : 'inline-block')};
     padding-top: 1rem;
   }
+
+  @media ${device.tablet} {
+    left: ${(props) => (props.click ? '80%' : '50%')};
+    top: ${(props) => (props.click ? '90%' : '50%')};
+  }
+  @media ${device.mobileL} {
+    left: ${(props) => (props.click ? '50%' : '50%')};
+  }
 `
 
 const LuneTransform = keyframes`
@@ -102,6 +112,13 @@ const LuneContainer = styled.div`
   z-index: 4;
   pointer-events: none;
   transition: all 1s ease;
+  @media ${device.tablet} {
+    left: ${(props) => (props.click ? '80%' : '50%')};
+    top: ${(props) => (props.click ? '90%' : '50%')};
+  }
+  @media ${device.mobileL} {
+    left: ${(props) => (props.click ? '50%' : '50%')};
+  }
 `
 
 const DarkDiv = styled.div`
@@ -114,6 +131,13 @@ const DarkDiv = styled.div`
   height: ${(props) => (props.click ? '100%' : '0%')};
   z-index: 1;
   transition: height 0.5s ease, width 1s ease 0.5s;
+
+  @media ${device.tablet} {
+    background-color: #285979;
+    width: ${(props) => (props.click ? '100%' : '0%')};
+    height: ${(props) => (props.click ? '50%' : '0%')};
+    right: 0%;
+  }
 `
 const PlanetContainer = styled.div`
   display: ${(props) => (props.click ? 'none' : 'flex')};
@@ -131,6 +155,10 @@ const PlanetContainer = styled.div`
 
   & > *:not(:last-child) {
     margin: 0.5rem 0;
+  }
+
+  @media ${device.tablet} {
+    display: none;
   }
 `
 const Line2 = styled.span`
@@ -155,6 +183,10 @@ const RedContainer = styled.div`
 
   & > *:not(:last-child) {
     margin: 0.5rem 0;
+  }
+
+  @media ${device.tablet} {
+    display: none;
   }
 `
 
@@ -187,17 +219,38 @@ const Main = () => {
           />
           <span>click here</span>
         </Center>
-        <NameHome click={click}>Gysen</NameHome>
-        <Nav click={click} />
-        <PlanetContainer click={click}>
-          <Planet width={60} />
-          <Line2 />
-        </PlanetContainer>
-
-        <RedContainer click={click}>
-          <RedPlanet width={60} />
-          <Line3 />
-        </RedContainer>
+        <NameHome click={+click}>Gysen</NameHome>
+        <Nav click={+click} />
+        <motion.div
+          initial={{
+            opacity: 0,
+            transition: { type: 'spring', duration: 1.5, delay: 1 },
+          }}
+          animate={{
+            opacity: 1,
+            transition: { type: 'spring', duration: 1.5, delay: 1.5 },
+          }}
+        >
+          <PlanetContainer click={+click}>
+            <Planet width={60} />
+            <Line2 />
+          </PlanetContainer>
+        </motion.div>
+        <motion.div
+          initial={{
+            opacity: 0,
+            transition: { type: 'spring', duration: 1.5, delay: 1 },
+          }}
+          animate={{
+            opacity: 1,
+            transition: { type: 'spring', duration: 1.5, delay: 1.5 },
+          }}
+        >
+          <RedContainer click={+click}>
+            <RedPlanet width={60} />
+            <Line3 />
+          </RedContainer>
+        </motion.div>
       </Container>
       {click ? <Intro /> : null}
     </MainContainer>

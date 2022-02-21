@@ -6,8 +6,10 @@ import NavBar from '../subComponents/NavBar'
 import SocialIcons from '../subComponents/SocialIcons'
 import ParticleComponent from '../subComponents/Particules'
 import { Satellite } from '../subComponents/AllSvg'
+import { motion } from 'framer-motion'
+import { device } from '../subComponents/Responsive'
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   width: 100vw;
   height: 100vh;
   background-image: url(${img});
@@ -15,6 +17,10 @@ const Container = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  @media ${device.tablet} {
+    height: auto;
+  }
 `
 
 const float = keyframes`
@@ -30,7 +36,7 @@ const Satellit = styled(Satellite)`
   animation: ${float} 4s ease infinite;
 `
 
-const Main = styled.div`
+const Main = styled(motion.div)`
   box-shadow: 0px 2px 7px rgba(255, 254, 254, 0.6);
   border-radius: 2px;
   color: ${(props) => props.theme.body};
@@ -51,9 +57,17 @@ const Main = styled.div`
   position: absolute;
   left: calc(5rem + 5vw);
   top: 10rem;
+
+  @media ${device.tablet} {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+  }
 `
 
-const Aside = styled.div`
+const Aside = styled(motion.div)`
   box-shadow: 0px 2px 7px rgba(255, 254, 254, 0.6);
   border-radius: 2px;
   color: ${(props) => props.theme.body};
@@ -82,9 +96,15 @@ const Aside = styled.div`
     font-weight: 500;
   }
   font-size: 1rem;
+
+  @media ${device.tablet} {
+    position: relative;
+    right: 0;
+    bottom: 0;
+  }
 `
 
-const Aside2 = styled.div`
+const Aside2 = styled(motion.div)`
   box-shadow: 0px 2px 7px rgba(255, 254, 254, 0.6);
   border-radius: 2px;
   color: ${(props) => props.theme.body};
@@ -115,36 +135,88 @@ const Aside2 = styled.div`
   font-size: 1rem;
 `
 
+// framer cfg
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+
+    transition: {
+      staggerChildren: 0.5,
+      duration: 1,
+    },
+  },
+}
+
 const About = () => {
   return (
-    <Container>
-      <ParticleComponent />
+    <Container
+      variants={container}
+      initial="hidden"
+      animate="show"
+      exit={{
+        opacity: 0,
+        transition: { duration: 0.5 },
+      }}
+    >
+      {/* <ParticleComponent /> */}
       <PowerButton color="dark" />
       <NavBar />
       <SocialIcons theme="dark" />
       <Satellit width={180} />
-      <Main>
-        I'm Lionel Gysen, i live in Brussels and i studied and worked in cinema
-        (cameraman, gaffer,...).
-        <br />
-        <br /> I started studying code at becode.Now I am a junior frontend
-        developer. I like to discover and test new features. Learn new things
-        about React and other frameworks.
-        <br />
-        <br />I also like the backend, learning more about node.js and when I
-        have a bit more time to learn laravel and improving my PHP knowledge.
+      <Main
+        initial={{ height: 0 }}
+        animate={{ height: '60vh' }}
+        transition={{ type: 'spring', duration: 2, delay: 1 }}
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 2 }}
+        >
+          I'm Lionel Gysen, i live in Brussels and i studied and worked in
+          cinema (cameraman, gaffer,...).
+          <br />
+          <br /> I started studying code at becode.Now I am a junior frontend
+          developer. I like to discover and test new features. Learn new things
+          about React and other frameworks.
+          <br />
+          <br />I also like the backend, learning more about node.js and when I
+          have a bit more time to learn laravel and improving my PHP knowledge.
+        </motion.div>
       </Main>
-      <Aside>
-        <h3>Backend</h3>
-        <br />
-        Node.js, Express, Apollo-server, GraphQL, PHP, MySQL, MongoDB.
+
+      <Aside
+        initial={{ height: 0 }}
+        animate={{ height: '15vh' }}
+        transition={{ type: 'spring', duration: 2, delay: 1 }}
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 2 }}
+        >
+          <h3>Backend</h3>
+          <br />
+          Node.js, Express, Apollo-server, GraphQL, PHP, MySQL, MongoDB.
+        </motion.div>
       </Aside>
 
-      <Aside2>
-        <h3>Frontend</h3>
-        <br />
-        Html, Css, Js, React, Sass, Bootstrap, Material-ui,
-        Styled-components,Chart.js, Docker, GraphQL, Git.
+      <Aside2
+        initial={{ height: 0 }}
+        animate={{ height: '15vh' }}
+        transition={{ type: 'spring', duration: 2, delay: 1 }}
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 2 }}
+        >
+          <h3>Frontend</h3>
+          <br />
+          Html, Css, Js, React, Sass, Bootstrap, Material-ui,
+          Styled-components,Chart.js, Docker, GraphQL, Git.
+        </motion.div>
       </Aside2>
     </Container>
   )

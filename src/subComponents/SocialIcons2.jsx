@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import styled from 'styled-components'
 import { Github, Linkedin2 } from './AllSvg'
@@ -26,10 +26,6 @@ const Line = styled(motion.span)`
   height: 8rem;
   background-color: ${(props) =>
     props.color === 'dark' ? DarkTheme.text : DarkTheme.body};
-  @media ${device.tablet} {
-    background-color: ${(props) =>
-      props.color === 'dark' ? '#285979' : DarkTheme.body};
-  }
 `
 
 const Git = styled(Github)`
@@ -57,16 +53,6 @@ const Linke = styled(Linkedin2)`
 `
 
 const SocialIcons = (props) => {
-  let [width, setWidth] = useState(window.innerWidth)
-
-  let updateDimension = () => {
-    setWidth(window.innerWidth)
-  }
-  useEffect(() => {
-    window.addEventListener('resize', updateDimension)
-    return () => window.removeEventListener('resize', updateDimension)
-  })
-
   return (
     <Icons>
       <motion.div
@@ -85,15 +71,7 @@ const SocialIcons = (props) => {
           <Git
             width={30}
             height={30}
-            fill={
-              width > 768
-                ? props.theme === 'dark'
-                  ? DarkTheme.text
-                  : DarkTheme.body
-                : props.theme === 'dark'
-                ? '#285979'
-                : DarkTheme.body
-            }
+            fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body}
           />
         </a>
       </motion.div>
@@ -113,15 +91,7 @@ const SocialIcons = (props) => {
           <Linke
             width={33}
             height={33}
-            fill={
-              width > 768
-                ? props.theme === 'dark'
-                  ? DarkTheme.text
-                  : DarkTheme.body
-                : props.theme === 'dark'
-                ? '#285979'
-                : DarkTheme.body
-            }
+            fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body}
           />
         </a>
       </motion.div>

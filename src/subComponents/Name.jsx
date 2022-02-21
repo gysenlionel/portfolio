@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { DarkTheme } from '../components/Theme'
 
-const Main = styled.h1`
+const Main = styled.div`
   color: ${(props) =>
     props.color === 'dark' ? DarkTheme.text : DarkTheme.body};
   font-family: 'Pacifico', cursive;

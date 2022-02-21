@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import { device } from '../subComponents/Responsive'
 
 const Container = styled.a`
   width: calc(10rem + 15vw);
@@ -38,6 +40,13 @@ const Container = styled.a`
     -webkit-transform: scale(1.1);
     transform: scale(1.08);
   }
+
+  @media ${device.tablet} {
+    width: calc(18rem + 20vw);
+  }
+  @media ${device.mobileL} {
+    width: calc(10rem + 20vw);
+  }
 `
 
 const Pics = styled.img`
@@ -58,14 +67,31 @@ const Explication = styled.h4`
   padding-top: 1.5rem;
   padding-bottom: 2rem;
 `
+const General = styled(motion.div)``
+
+// framer cfg
+const Item = {
+  hidden: {
+    scale: 0,
+  },
+  show: {
+    scale: 1,
+    transition: {
+      type: 'spring',
+      duration: 0.5,
+    },
+  },
+}
 
 const Cart = ({ img, links, explain, techno }) => {
   return (
-    <Container href={links} target="_blank">
-      <Pics src={img} />
-      <Explication>{explain}</Explication>
-      <Techno>{techno}</Techno>
-    </Container>
+    <General variants={Item}>
+      <Container href={links} target="_blank">
+        <Pics src={img} />
+        <Explication>{explain}</Explication>
+        <Techno>{techno}</Techno>
+      </Container>
+    </General>
   )
 }
 

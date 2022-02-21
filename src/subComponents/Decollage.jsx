@@ -1,9 +1,13 @@
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { Flame, SvgComponent } from './AllSvg'
+import { device } from './Responsive'
 
 const Container = styled.div`
   position: relative;
+  @media ${device.tablet} {
+    display: none;
+  }
 `
 
 const Slider = styled.div`
