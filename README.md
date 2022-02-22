@@ -1,4 +1,4 @@
-# My portFolio
+# My portfolio
 
 [visit](https://portfolio-lionel.netlify.app/)
 
