@@ -5,11 +5,15 @@ import PowerButton from '../subComponents/PowerButton'
 import SocialIcons from '../subComponents/SocialIcons2'
 import Cart from './Cart'
 import NavBar from '../subComponents/NavBar'
+import NavWork from '../subComponents/mobile/NavWork'
+import NavAbout from '../subComponents/mobile/NavAbout'
+import SocialMob from '../subComponents/mobile/SocialMob'
 import { Works } from '../data/Works'
 import { motion } from 'framer-motion'
 import { device } from '../subComponents/Responsive'
 
 import Decollage from '../subComponents/Decollage'
+import Loader from './Loader'
 
 const MainContainer = styled(motion.div)`
   background-image: url(${img});
@@ -65,40 +69,80 @@ const Work = () => {
     setNumbers(parseInt(num))
   }, [])
 
+  let [width, setWidth] = useState(window.innerWidth)
+
+  let updateDimension = () => {
+    setWidth(window.innerWidth)
+  }
+  useEffect(() => {
+    window.addEventListener('resize', updateDimension)
+    return () => window.removeEventListener('resize', updateDimension)
+  })
+
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const loadData = async () => {
+      await new Promise((r) => setTimeout(r, 2000))
+
+      setLoading((loading) => !loading)
+    }
+
+    loadData()
+  }, [])
+
   return (
-    <MainContainer
-      variants={container}
-      initial="hidden"
-      animate="show"
-      exit={{
-        opacity: 0,
-        transition: { duration: 0.5 },
-      }}
-    >
-      <Container>
-        {/* <LogoComponent theme="dark" />
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <MainContainer
+          variants={container}
+          initial="hidden"
+          animate="show"
+          exit={{
+            opacity: 0,
+            transition: { duration: 0.5 },
+          }}
+        >
+          <Container>
+            {/* <LogoComponent theme="dark" />
         <Name theme="dark" /> */}
-        <PowerButton color="dark" />
-        <SocialIcons theme="dark" />
-        <NavBar />
-        <Decollage numbers={numbers} />
-        <Center>
-          <Grid>
-            {Works.map((work) => {
-              return (
-                <Cart
-                  key={work.id}
-                  img={work.img}
-                  links={work.links}
-                  explain={work.explain}
-                  techno={work.techno}
-                />
-              )
-            })}
-          </Grid>
-        </Center>
-      </Container>
-    </MainContainer>
+            <PowerButton color="dark" />
+
+            {width > 425 ? (
+              <NavBar />
+            ) : (
+              <>
+                <NavWork />
+                <NavAbout />
+              </>
+            )}
+            <Decollage numbers={numbers} />
+            <Center>
+              <Grid>
+                {Works.map((work) => {
+                  return (
+                    <Cart
+                      key={work.id}
+                      img={work.img}
+                      links={work.links}
+                      explain={work.explain}
+                      techno={work.techno}
+                    />
+                  )
+                })}
+              </Grid>
+            </Center>
+            {width > 425 ? (
+              <SocialIcons theme="dark" />
+            ) : (
+              <SocialMob theme="dark" />
+            )}
+          </Container>
+        </MainContainer>
+      )}
+    </>
   )
 }
 

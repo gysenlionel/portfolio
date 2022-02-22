@@ -1,30 +1,20 @@
 import React from 'react'
 
 import styled from 'styled-components'
-import { Github, Linkedin2 } from './AllSvg'
-import { DarkTheme } from '../components/Theme'
+import { Github, Linkedin2 } from '../AllSvg'
+import { DarkTheme } from '../../components/Theme'
 import { motion } from 'framer-motion'
 
 const Icons = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
-
-  position: fixed;
+  justify-content: center;
+  position: relative;
   bottom: 0;
-  left: 2rem;
+  /* left: 40%; */
   z-index: 3;
-
-  & > *:not(:last-child) {
-    margin: 0.5rem 0;
-  }
-`
-
-const Line = styled(motion.span)`
-  width: 2px;
-  height: 8rem;
-  background-color: ${(props) =>
-    props.color === 'dark' ? DarkTheme.text : DarkTheme.body};
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
 `
 
 const Git = styled(Github)`
@@ -32,6 +22,7 @@ const Git = styled(Github)`
   transform: scale(1);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  margin-right: 1rem;
   &:hover {
     transform: scale(1.3);
     transition: 0.3s ease-in-out;
@@ -94,20 +85,6 @@ const SocialIcons = (props) => {
           />
         </a>
       </motion.div>
-      <Line
-        color={props.theme}
-        initial={{
-          height: 0,
-        }}
-        animate={{
-          height: '8rem',
-        }}
-        transition={{
-          type: 'spring',
-          duration: 1,
-          delay: 0.8,
-        }}
-      />
     </Icons>
   )
 }

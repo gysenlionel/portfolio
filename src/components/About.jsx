@@ -1,25 +1,44 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled, { keyframes } from 'styled-components'
 import img from '../assets/img/luneEarth.jpg'
 import PowerButton from '../subComponents/PowerButton'
 import NavBar from '../subComponents/NavBar'
-import SocialIcons from '../subComponents/SocialIcons'
+import SocialIcons from '../subComponents/SocialIcons2'
+import NavWork from '../subComponents/mobile/NavWork'
+import NavAbout from '../subComponents/mobile/NavAbout'
+import SocialMob from '../subComponents/mobile/SocialMob'
 import ParticleComponent from '../subComponents/Particules'
 import { Satellite } from '../subComponents/AllSvg'
 import { motion } from 'framer-motion'
 import { device } from '../subComponents/Responsive'
+import Loader from './Loader'
 
 const Container = styled(motion.div)`
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   background-image: url(${img});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
+  /* @media ${device.tablet} {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } */
+`
+
+const SubContainer = styled.div`
+  height: 100vh;
   @media ${device.tablet} {
     height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `
 
@@ -34,6 +53,9 @@ const Satellit = styled(Satellite)`
   top: 10%;
   right: 5%;
   animation: ${float} 4s ease infinite;
+  @media ${device.tablet} {
+    display: none;
+  }
 `
 
 const Main = styled(motion.div)`
@@ -59,11 +81,11 @@ const Main = styled(motion.div)`
   top: 10rem;
 
   @media ${device.tablet} {
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: static;
+    z-index: 0;
     width: 60vw;
+    padding: 1rem;
+    margin-top: 10rem;
   }
 `
 
@@ -75,8 +97,9 @@ const Aside = styled(motion.div)`
 
   position: absolute;
   right: calc(5rem + 5vw);
-  bottom: 2rem;
-
+  bottom: 20%;
+  /* bottom: 2rem; */
+  /* bottom: calc(20%); */
   width: 15vw;
   height: 15vh;
 
@@ -98,9 +121,12 @@ const Aside = styled(motion.div)`
   font-size: 1rem;
 
   @media ${device.tablet} {
-    position: relative;
-    right: 0;
-    bottom: 0;
+    position: static;
+    width: 20vw;
+  }
+  @media ${device.mobileXL} {
+    width: 53vw;
+    margin-top: 2rem;
   }
 `
 
@@ -133,6 +159,29 @@ const Aside2 = styled(motion.div)`
     font-weight: 500;
   }
   font-size: 1rem;
+  @media ${device.tablet} {
+    position: static;
+    width: 20vw;
+  }
+  @media ${device.mobileXL} {
+    width: 53vw;
+  }
+`
+
+const AsideContainer = styled.div`
+  @media ${device.tablet} {
+    width: 100vw;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-evenly;
+    /* align-items: center; */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  @media ${device.mobileXL} {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 // framer cfg
@@ -149,76 +198,120 @@ const container = {
 }
 
 const About = () => {
+  let [width, setWidth] = useState(window.innerWidth)
+
+  let updateDimension = () => {
+    setWidth(window.innerWidth)
+  }
+  useEffect(() => {
+    window.addEventListener('resize', updateDimension)
+    return () => window.removeEventListener('resize', updateDimension)
+  })
+
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const loadData = async () => {
+      await new Promise((r) => setTimeout(r, 2000))
+
+      setLoading((loading) => !loading)
+    }
+
+    loadData()
+  }, [])
+
   return (
-    <Container
-      variants={container}
-      initial="hidden"
-      animate="show"
-      exit={{
-        opacity: 0,
-        transition: { duration: 0.5 },
-      }}
-    >
-      {/* <ParticleComponent /> */}
-      <PowerButton color="dark" />
-      <NavBar />
-      <SocialIcons theme="dark" />
-      <Satellit width={180} />
-      <Main
-        initial={{ height: 0 }}
-        animate={{ height: '60vh' }}
-        transition={{ type: 'spring', duration: 2, delay: 1 }}
-      >
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 2 }}
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <Container
+          variants={container}
+          initial="hidden"
+          animate="show"
+          exit={{
+            opacity: 0,
+            transition: { duration: 0.5 },
+          }}
         >
-          I'm Lionel Gysen, i live in Brussels and i studied and worked in
-          cinema (cameraman, gaffer,...).
-          <br />
-          <br /> I started studying code at becode.Now I am a junior frontend
-          developer. I like to discover and test new features. Learn new things
-          about React and other frameworks.
-          <br />
-          <br />I also like the backend, learning more about node.js and when I
-          have a bit more time to learn laravel and improving my PHP knowledge.
-        </motion.div>
-      </Main>
+          <SubContainer>
+            <ParticleComponent />
+            <PowerButton color="dark" />
 
-      <Aside
-        initial={{ height: 0 }}
-        animate={{ height: '15vh' }}
-        transition={{ type: 'spring', duration: 2, delay: 1 }}
-      >
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 2 }}
-        >
-          <h3>Backend</h3>
-          <br />
-          Node.js, Express, Apollo-server, GraphQL, PHP, MySQL, MongoDB.
-        </motion.div>
-      </Aside>
+            {width > 425 ? (
+              <NavBar />
+            ) : (
+              <>
+                <NavWork />
+                <NavAbout />
+              </>
+            )}
 
-      <Aside2
-        initial={{ height: 0 }}
-        animate={{ height: '15vh' }}
-        transition={{ type: 'spring', duration: 2, delay: 1 }}
-      >
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 2 }}
-        >
-          <h3>Frontend</h3>
-          <br />
-          Html, Css, Js, React, Sass, Bootstrap, Material-ui,
-          Styled-components,Chart.js, Docker, GraphQL, Git.
-        </motion.div>
-      </Aside2>
-    </Container>
+            <Satellit width={180} />
+            <Main
+              initial={{ height: 0 }}
+              animate={width > 425 ? { height: '60vh' } : { height: '75vh' }}
+              transition={{ type: 'spring', duration: 2.5, delay: 0 }}
+            >
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 1.5 }}
+              >
+                I'm Lionel Gysen, i live in Brussels and i studied and worked in
+                cinema (cameraman, gaffer,...).
+                <br />
+                <br /> I started studying code at becode.Now I am a junior
+                frontend developer. I like to discover and test new features.
+                Learn new things about React and other frameworks.
+                <br />
+                <br />I also like the backend, learning more about node.js and
+                when I have a bit more time to learn laravel and improving my
+                PHP knowledge.
+              </motion.div>
+            </Main>
+            <AsideContainer>
+              <Aside2
+                initial={{ height: 0 }}
+                animate={width > 768 ? { height: '15vh' } : { height: '20vh' }}
+                transition={{ type: 'spring', duration: 2.5, delay: 0 }}
+              >
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 1.5 }}
+                >
+                  <h3>Frontend</h3>
+                  <br /> <br />
+                  Html, Css, Js, React, Sass, Bootstrap, Material-ui,
+                  Styled-components,Chart.js, Docker, GraphQL, Git.
+                </motion.div>
+              </Aside2>
+              <Aside
+                initial={{ height: 0 }}
+                animate={width > 768 ? { height: '15vh' } : { height: '20vh' }}
+                transition={{ type: 'spring', duration: 2.5, delay: 0 }}
+              >
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 1.5 }}
+                >
+                  <h3>Backend</h3>
+                  <br /> <br />
+                  Node.js, Express, Apollo-server, GraphQL, PHP, MySQL, MongoDB.
+                </motion.div>
+              </Aside>
+            </AsideContainer>
+            {width > 425 ? (
+              <SocialIcons theme="dark" />
+            ) : (
+              <SocialMob theme="dark" />
+            )}
+          </SubContainer>
+        </Container>
+      )}
+    </>
   )
 }
 

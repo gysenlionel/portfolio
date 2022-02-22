@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled, { keyframes } from 'styled-components'
 import LogoComponent from '../subComponents/LogoComponent'
 import PowerButton from '../subComponents/PowerButton'
@@ -9,6 +9,7 @@ import Nav from '../subComponents/Nav'
 import Intro from './Intro'
 import { motion } from 'framer-motion'
 import { device } from '../subComponents/Responsive'
+import Loader from './Loader'
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
@@ -200,60 +201,79 @@ const Main = () => {
   const [click, setClick] = useState(false)
 
   const handleClick = () => setClick(!click)
-  return (
-    <MainContainer>
-      <DarkDiv click={click} />
-      <Container>
-        <PowerButton />
-        <LogoComponent theme={click ? 'dark' : 'light'} />
-        <SocialIcons theme={click ? 'dark' : 'light'} />
 
-        <LuneContainer click={click}>
-          <Luna2 width={click ? 30 : 50} />
-        </LuneContainer>
-        <Center click={click}>
-          <Earth2
-            width={click ? 80 : 150}
-            height={click ? 80 : 150}
-            onClick={() => handleClick()}
-          />
-          <span>click here</span>
-        </Center>
-        <NameHome click={+click}>Gysen</NameHome>
-        <Nav click={+click} />
-        <motion.div
-          initial={{
-            opacity: 0,
-            transition: { type: 'spring', duration: 1.5, delay: 1 },
-          }}
-          animate={{
-            opacity: 1,
-            transition: { type: 'spring', duration: 1.5, delay: 1.5 },
-          }}
-        >
-          <PlanetContainer click={+click}>
-            <Planet width={60} />
-            <Line2 />
-          </PlanetContainer>
-        </motion.div>
-        <motion.div
-          initial={{
-            opacity: 0,
-            transition: { type: 'spring', duration: 1.5, delay: 1 },
-          }}
-          animate={{
-            opacity: 1,
-            transition: { type: 'spring', duration: 1.5, delay: 1.5 },
-          }}
-        >
-          <RedContainer click={+click}>
-            <RedPlanet width={60} />
-            <Line3 />
-          </RedContainer>
-        </motion.div>
-      </Container>
-      {click ? <Intro /> : null}
-    </MainContainer>
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const loadData = async () => {
+      await new Promise((r) => setTimeout(r, 2000))
+
+      setLoading((loading) => !loading)
+    }
+
+    loadData()
+  }, [])
+
+  return (
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <MainContainer>
+          <DarkDiv click={click} />
+          <Container>
+            <PowerButton />
+            <LogoComponent theme={click ? 'dark' : 'light'} />
+            <SocialIcons theme={click ? 'dark' : 'light'} />
+
+            <LuneContainer click={click}>
+              <Luna2 width={click ? 30 : 50} />
+            </LuneContainer>
+            <Center click={click}>
+              <Earth2
+                width={click ? 80 : 150}
+                height={click ? 80 : 150}
+                onClick={() => handleClick()}
+              />
+              <span>click here</span>
+            </Center>
+            <NameHome click={+click}>Gysen</NameHome>
+            <Nav click={+click} />
+            <motion.div
+              initial={{
+                opacity: 0,
+                transition: { type: 'spring', duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                opacity: 1,
+                transition: { type: 'spring', duration: 1.5, delay: 1.5 },
+              }}
+            >
+              <PlanetContainer click={+click}>
+                <Planet width={60} />
+                <Line2 />
+              </PlanetContainer>
+            </motion.div>
+            <motion.div
+              initial={{
+                opacity: 0,
+                transition: { type: 'spring', duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                opacity: 1,
+                transition: { type: 'spring', duration: 1.5, delay: 1.5 },
+              }}
+            >
+              <RedContainer click={+click}>
+                <RedPlanet width={60} />
+                <Line3 />
+              </RedContainer>
+            </motion.div>
+          </Container>
+          {click ? <Intro /> : null}
+        </MainContainer>
+      )}
+    </>
   )
 }
 
