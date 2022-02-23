@@ -42,10 +42,12 @@ const Container = styled.a`
   }
 
   @media ${device.tablet} {
+    height: 22rem;
     width: calc(18rem + 20vw);
   }
   @media ${device.mobileL} {
     width: calc(10rem + 20vw);
+    height: 20rem;
   }
 `
 
@@ -60,13 +62,14 @@ const Pics = styled.img`
 `
 
 const Techno = styled.p`
-  color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`};
+  color: ${(props) => `rgba(${props.theme.bodyRgba},0.9)`};
 `
 
 const Explication = styled.h4`
   padding-top: 1.5rem;
   padding-bottom: 2rem;
 `
+
 const General = styled(motion.div)``
 
 // framer cfg

@@ -258,16 +258,24 @@ const About = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1.5 }}
               >
-                I'm Lionel Gysen, i live in Brussels and i studied and worked in
-                cinema (cameraman, gaffer,...).
+                <p>
+                  I'm Lionel Gysen, i live in Brussels and i studied and worked
+                  in cinema (cameraman, gaffer,...).
+                </p>
                 <br />
-                <br /> I started studying code at becode.Now I am a junior
-                frontend developer. I like to discover and test new features.
-                Learn new things about React and other frameworks.
+
+                <p>
+                  I started studying code at becode.Now I am a junior frontend
+                  developer. I like to discover and test new features. Learn new
+                  things about React and other frameworks.
+                </p>
                 <br />
-                <br />I also like the backend, learning more about node.js and
-                when I have a bit more time to learn laravel and improving my
-                PHP knowledge.
+
+                <p>
+                  I also like the backend, learning more about node.js and when
+                  I have a bit more time to learn laravel and improving my PHP
+                  knowledge.
+                </p>
               </motion.div>
             </Main>
             <AsideContainer>
@@ -282,9 +290,12 @@ const About = () => {
                   transition={{ duration: 1, delay: 1.5 }}
                 >
                   <h3>Frontend</h3>
-                  <br /> <br />
-                  Html, Css, Js, React, Sass, Bootstrap, Material-ui,
-                  Styled-components,Chart.js, Docker, GraphQL, Git.
+                  <br />
+                  <br />
+                  <p>
+                    Html, Css, Js, React, Sass, Bootstrap, Material-ui,
+                    Styled-components,Chart.js, Docker, GraphQL, Git.
+                  </p>
                 </motion.div>
               </Aside2>
               <Aside
@@ -298,8 +309,12 @@ const About = () => {
                   transition={{ duration: 1, delay: 1.5 }}
                 >
                   <h3>Backend</h3>
-                  <br /> <br />
-                  Node.js, Express, Apollo-server, GraphQL, PHP, MySQL, MongoDB.
+                  <br />
+                  <br />
+                  <p>
+                    Node.js, Express, Apollo-server, GraphQL, PHP, MySQL,
+                    MongoDB.
+                  </p>
                 </motion.div>
               </Aside>
             </AsideContainer>
