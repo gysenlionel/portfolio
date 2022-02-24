@@ -13,7 +13,7 @@ const Work = styled(NavLink)`
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: white;
+  color: #fcf6f4;
   background-color: ${(props) => (props.click ? '#285979' : '#000')};
   font-weight: bold;
   -webkit-transform: scale(1);
@@ -54,7 +54,7 @@ const Abouth3 = styled.h5`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #fcf6f4;
   background-color: ${(props) => (props.click ? '#285979' : '#000')};
   font-weight: bold;
   -webkit-transform: scale(1);

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 const Work = styled(NavLink)`
   color: #000;
-  border: 2px solid #fff;
+  border: 2px solid #fcf6f4;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -13,7 +13,7 @@ const Work = styled(NavLink)`
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  background-color: #fff;
+  background-color: #fcf6f4;
   font-weight: bold;
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -46,7 +46,7 @@ const AboutContainer = styled.div`
 `
 
 const Abouth3 = styled.h5`
-  border: 2px solid #fff;
+  border: 2px solid #fcf6f4;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -54,7 +54,7 @@ const Abouth3 = styled.h5`
   justify-content: center;
   align-items: center;
   color: #000;
-  background-color: #fff;
+  background-color: #fcf6f4;
   font-weight: bold;
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -70,7 +70,7 @@ const Abouth3 = styled.h5`
 const Line = styled(motion.span)`
   width: 2px;
   height: 8rem;
-  background-color: #fff;
+  background-color: #fcf6f4;
 `
 
 const Nav = () => {

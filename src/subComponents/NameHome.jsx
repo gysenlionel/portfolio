@@ -12,7 +12,7 @@ const Main = styled(motion.div)`
   z-index: 1;
 
   @media ${device.tablet} {
-    color: ${(props) => (props.click ? '#fff' : '#000')};
+    color: ${(props) => (props.click ? '#fcf6f4' : '#000')};
   }
 `
 
