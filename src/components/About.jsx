@@ -97,7 +97,7 @@ const Aside = styled(motion.div)`
 
   position: absolute;
   right: calc(5rem + 5vw);
-  bottom: 20%;
+  top: calc(5rem + 50vh);
   /* bottom: 2rem; */
   /* bottom: calc(20%); */
   width: 15vw;
@@ -169,6 +169,7 @@ const Aside2 = styled(motion.div)`
 `
 
 const AsideContainer = styled.div`
+  position: relative;
   @media ${device.tablet} {
     width: 100vw;
     display: flex;

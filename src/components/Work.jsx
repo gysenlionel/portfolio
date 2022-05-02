@@ -121,17 +121,19 @@ const Work = () => {
             <Decollage numbers={numbers} />
             <Center>
               <Grid>
-                {Works.map((work) => {
-                  return (
-                    <Cart
-                      key={work.id}
-                      img={work.img}
-                      links={work.links}
-                      explain={work.explain}
-                      techno={work.techno}
-                    />
-                  )
-                })}
+                {Works.slice(0)
+                  .reverse()
+                  .map((work) => {
+                    return (
+                      <Cart
+                        key={work.id}
+                        img={work.img}
+                        links={work.links}
+                        explain={work.explain}
+                        techno={work.techno}
+                      />
+                    )
+                  })}
               </Grid>
             </Center>
             {width > 425 ? (
